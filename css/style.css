@@ -1,5 +1,18 @@
 #header {
-    align-content: center;
-    background-color: aliceblue;
-    
+    background-color: lightgrey;
+    text-align: center;
+    padding-bottom: 10px;    
+}
+#headerTitle {
+    font-size: 60px;
+    font-style: bold;
+}
+
+#home {
+    text-align: center;
+    margin-top: 60px;
+}
+#newDinner {
+    margin-top: 60px;
+    font-size: 20px;
 }
