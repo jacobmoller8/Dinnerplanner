@@ -24,20 +24,28 @@
     <div class="container leftSideContainer">
         
         <div class="row">
-            <div class="container-fluid sideTopSection"></div>
+            <div class="container-fluid col sideTopSection">
                 <h4>My dinner</h4>
             </div>
         </div>
 
         <div class="row">
-            <div class="container-fluid colsideColumnHeader">
-                <p class="sideDishName">Dish Name</p>
-                <p class="sideCost">Cost</p>
+            <div class="container-fluid col sideColumnHeader">
+                <div class="row">
+                    <p class="sideDishName col-6">Dish Name</p>
+                    <p class="sideCost col-6">Cost</p>
+                </div>
             </div>
         </div>
 
         <div class="row">
-
+            <div class="container-fluid col sideBottomSection">
+                <div class="row">
+                    <p class="sideDishName col-6">Köttbullar</p>
+                    <p class="sideCost col-6">SEK 0.00</p>
+                </div>
+                <button type="button" class="btn btn-secondary confirmDinnerButton">Confirm Dinner</button>
+            </div>
         </div>        
 
     </div>
