@@ -20,7 +20,11 @@
     margin-left: 40px;
     font-size: 40px;
 }
+/*  SKA LÄGGAS TILL I style.css  */ 
 
+.row{
+    margin: none;
+}
 .leftSideContainer{
     padding-left: 0px;
     height: 100%;
