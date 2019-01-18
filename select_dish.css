@@ -67,3 +67,8 @@
 .mobileNavBtn{
     float: right;
 }
+
+.card{
+    float: none;
+    margin:auto; 
+}
