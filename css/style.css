@@ -28,7 +28,7 @@
     font-size: 30px;
 }
 #dinnerSpecifics {
-    padding: 80px;
+    padding: 20px;
 }
 #recipeButtonContainer {
     padding-top: 20px;
@@ -38,3 +38,8 @@
 #printRecipeButton {
     font-size: 40px;
 }
+#dishPrice {
+    margin-top: 10px;
+    text-align: right;
+}
+
