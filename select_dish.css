@@ -27,9 +27,24 @@
 }
 
 .leftSideContainer{
-    padding-left: 0px;
+    width: 20%;
     height: 100%;
     position: fixed;
     border: solid;
     border-width: 2px;
 }
+
+.sideColumnHeader{
+    background-color: grey;
+}
+
+.sideCost{
+    text-align: right;
+}
+
+.confirmDinnerButton{
+    display: block;
+    margin: auto;
+    padding: none;
+}
+
