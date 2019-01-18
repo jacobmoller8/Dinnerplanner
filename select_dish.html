@@ -16,53 +16,66 @@
 <body>
 
     <!-- HEADER -->
-    <div id="header" class="container-fluid">
+    <div id="header" class="container-fluid d-none d-sm-block">
         <h1 id="headerTitle">Dinner Planner</h1>
-        <nav class="navbar navbar-light bg-light d-block d-sm-none">
-            <a class="navbar-brand" href="#"> My Dinner</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                  </ul>
-            </div>
-        </nav>
-
     </div>
-    
+
+    <!-- MOBILE HEADER -->
+    <div id="mobileHeader" class="container-fluid d-block d-sm-none">
+            <h1 id="mobileHeaderTitle">Dinner Planner</h1>
+        </div>
+
+    <!-- TOP NAVBAR ON SMALL DEVICES -->
+    <nav class="navbar navbar-light bg-light d-block d-sm-none">
+        <a class="navbar-brand" href="#"> My Dinner</a>
+        <button class="navbar-toggler mobileNavBtn" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="row">
+                    <div class="container-fluid col navTopSection">
+                        <h4>My dinner</h4>
+                        <form action="#">
+                            <div class="form-group row">
+                                    <label class="col-4" for="peopleSelector">People:</label>
+                                    <input class="form-control col-4" id="peopleSelector" type="number" name="people" step="1">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="container-fluid col navColumnHeader">
+                        <div class="row">
+                            <p class="sideDishName col-6">Dish Name</p>
+                            <p class="sideCost col-6">Cost</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="container-fluid col navBottomSection">
+                        <div class="row">
+                            <p class="sideDishName col-6">Köttbullar</p>
+                            <p class="sideCost col-6">SEK 0.00</p>
+                        </div>
+                        <button type="button" class="btn btn-secondary confirmDinnerButton">Confirm Dinner</button>
+                    </div>
+                </div> 
+        </div>
+    </nav>
 
     <!-- LEFT SIDE BAR -->
     <div class="container d-none d-sm-block col-sm-3 col-lg-2 leftSideContainer">
         <div class="row">
             <div class="container-fluid col sideTopSection">
                 <h4>My dinner</h4>
-                <div class="form-group">
-                    <label for="sel1">People:</label>
-                    <select class="form-control" id="sel1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>>8</option>
-                    </select>
-                </div> 
+                <form action="#">
+                    <div class="form-group row">
+                            <label class="col-4" for="peopleSelector">People:</label>
+                            <input class="form-control col-4" id="peopleSelector" type="number" name="people" step="1">
+                    </div>
+                </form>
             </div>
         </div>
 
@@ -115,23 +128,23 @@
     <div id="selectDish" class="container-fluid col offset-sm-3 col-sm-9">
         <div class="row">
 
-            <div class="card col-2">
+            <div class="card col-12 col-sm-2">
                 <div class="card-body">Lasange</div>
             </div>
 
-            <div class="card col-2">
+            <div class="card col-12 col-sm-2">
                 <div class="card-body">Pizza</div>
             </div>
             
-            <div class="card col-2">
+            <div class="card col-12 col-sm-2">
                 <div class="card-body">Mushrooms</div>
             </div>
     
-            <div class="card col-2">
+            <div class="card col-12 col-sm-2">
                 <div class="card-body">Florentina</div>
             </div>
 
-            <div class="card col-2">
+            <div class="card col-12 col-sm-2">
                     <div class="card-body">Boiled Cod</div>
                 </div>
         </div>    
