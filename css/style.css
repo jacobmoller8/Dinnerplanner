@@ -16,10 +16,15 @@
     margin-top: 60px;
     font-size: 20px;
 }
+#dinnerOverview {
+    margin-top: 20px;
+    text-align: center;
+    vertical-align: center;
+}
 #myDinner {
     margin-left: 40px;
     font-size: 40px;
 }
 #goBackButton {
-    font-size: 20px;
+    font-size: 30px;
 }
