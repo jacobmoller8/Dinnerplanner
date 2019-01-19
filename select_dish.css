@@ -40,7 +40,7 @@
 }
 
 .form-row{
-    margin:none;
+    margin: none;
 }
 
 .leftSideContainer{
@@ -68,7 +68,6 @@
     float: right;
 }
 
-.card{
-    float: none;
-    margin:auto; 
+.imgCont{
+    padding-bottom: 10px;
 }
