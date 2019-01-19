@@ -40,7 +40,7 @@
 }
 
 .form-row{
-    margin:none;
+    margin: none;
 }
 
 .leftSideContainer{
@@ -66,4 +66,8 @@
 
 .mobileNavBtn{
     float: right;
+}
+
+.imgCont{
+    padding-bottom: 10px;
 }
