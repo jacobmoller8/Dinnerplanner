@@ -78,11 +78,14 @@
 .dishBtn{
     width: 100%;
     border-radius: 0;
-    
+
 }
 
-.dishDescript{
+.dishReci{
     background-color: #ffd684;
 }
 
-
+.dishDescImageCont{
+    margin: 0 auto;
+    padding: 0;
+}
