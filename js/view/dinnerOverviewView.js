@@ -2,17 +2,10 @@ var dinnerOverviewView = function (container, model) {
 
     this.container = container;
 
-    var NumberOfGuests = container.find("#numberOfGuests");
-    var persons = model.getNumberOfGuests();
-    NumberOfGuests.html("hej");
-
-
-
     var dishesModel = container.find("#dishesModel");
     var menu = model.getFullMenu();
     var dishes = "";
 
-    dish
 
     for (var i = 0; i < menu.length; i++) {
         var dish = model.getDish(menu[i]);
