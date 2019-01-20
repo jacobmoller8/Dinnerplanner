@@ -40,6 +40,11 @@
 #dishPrice {
     margin-top: 10px;
     text-align: right;
+    color: red;
+}
+
+#menuPrice {
+    color: red;
 }
 #dinnerPrintout {
     text-align: center;
