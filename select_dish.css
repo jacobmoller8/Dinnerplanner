@@ -80,6 +80,10 @@
 
 }
 
+.dishDesc{
+    padding-bottom: 10px;
+}
+
 .dishReci{
     background-color: #ffd684;
 }
@@ -87,4 +91,9 @@
 .dishDescImageCont{
     margin: 0 auto;
     padding: 0;
+}
+
+.btn-secondary{
+    color: black;
+    background-color: #ffb856;
 }
