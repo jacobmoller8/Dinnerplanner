@@ -68,6 +68,10 @@
     float: right;
 }
 
+.dishDescImage{
+    width: 100%;
+}
+
 .imgCont{
     display: block;
     padding-bottom: 10px;
