@@ -69,14 +69,15 @@
 }
 
 .imgCont{
+    display: block;
     padding-bottom: 10px;
-    position: relative;
+    
 }
 
-.imgTextCont{
-    background-color: grey;
-    position: absolute;
-    left: 0px; 
-    right: 0px;
+.dishBtn{
+    width: 100%;
+    border-radius: 0;
+    
 }
+
 
