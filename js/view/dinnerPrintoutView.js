@@ -7,28 +7,33 @@ var dinnerPrintoutView = function (container, model) {
     numberOfPersons.html(guests);
 
 
-    startRow = '<div class="row justify-content-md-center">';
-
     var dishesModel = container.find("#dishesModel");
     var menu = model.getFullMenu();
     var dishes = "";
 
     for (var i = 0; i < menu.length; i++) {
         var dish = model.getDish(menu[i]);
-        dishes += '<div class="col-md-2">' +
-            '<img src="images/' + dish.image + '" width="100%" height="150px" class="mt-4">' +
-            '<button class="btn btn-default btn-block bg-light border-dark">' + dish.name + '</button>' +
-            '<h4 id="dishPrice">' + model.getDishPrice(dish).toFixed(2) + ' SEK</h4>' +
-            '</div>'
+        dishes += '<div class="row justify-content-md-center mt-4 mb-4">' +
+            '<div class="col-sm-2">' +
+            '</div>' +
+            '<div class="col-md-5">' +
+            '<div class="row">' +
+            '<div class="col-md-auto">' +
+            '<img src="images/' + dish.image + '" width="250" height="150px">' +
+            '</div>' +
+            '<div class="col-md-auto">' +
+            '<h2>' + dish.name + '</h2>' +
+            '<p>Lorem Ipsum</p>' +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '<div class="col-md">' +
+            '<h4>Preparation</h4>' +
+            '<p>' + dish.description + '</p>' +
+            '</div>' +
+            '</div>';
     }
 
-
-    endRow = '</div>';
-
-
-    returnString = startRow + dishes + rightSide + endRow;
-
-
-    dishesModel.html(returnString);
+    dishesModel.html(dishes);
 
 }
