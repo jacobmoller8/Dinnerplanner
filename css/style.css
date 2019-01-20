@@ -21,14 +21,13 @@
     padding: 30px;
 }
 #myDinner {
-    margin-left: 40px;
     font-size: 40px;
 }
 #goBackButton {
     font-size: 30px;
 }
 #dinnerSpecifics {
-    padding: 20px;
+    padding-top: 20px;
 }
 #recipeButtonContainer {
     padding-top: 20px;
@@ -41,5 +40,10 @@
 #dishPrice {
     margin-top: 10px;
     text-align: right;
+}
+#dinnerPrintout {
+    text-align: center;
+    vertical-align: center;
+    padding: 30px;
 }
 
