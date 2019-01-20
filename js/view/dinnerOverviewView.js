@@ -22,8 +22,6 @@ var dinnerOverviewView = function (container, model) {
             '</div>'
     }
 
-
-
     rightSide = '<div id="totalCost" class="col-md-auto border-left">' +
         '<h2>Total:</h2>' +
         '<h3>300 SEK</h3>' +
