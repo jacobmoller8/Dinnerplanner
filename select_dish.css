@@ -36,7 +36,8 @@
     margin-left:10px;
 }
 .row{
-    margin: none;
+    margin: 0 auto;
+
 }
 
 .form-row{
@@ -78,6 +79,10 @@
     width: 100%;
     border-radius: 0;
     
+}
+
+.dishDescript{
+    background-color: #ffd684;
 }
 
 
