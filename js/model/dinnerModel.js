@@ -34,18 +34,19 @@ var DinnerModel = function () {
 
 	// Returns the price for the dish (ingredients price * number of guests).
 	this.getDishPrice = function (dish) {
-		var price = 0;
+		var dishPrice = 0;
 		for (var i = 0; i < dish.ingredients.length; i++) {
-			price += dish.ingredients[i].price * numberOfGuests;
+			dishPrice += dish.ingredients[i].price * numberOfGuests;
 		}
-		return price;
+		return dishPrice;
 	}
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function () {
-		var menuPrice = 0;
+		menuPrice = 0;
 		for (var i = 0; i < menu.length; i++) {
-			menuPrice += this.getDishPrice(menu[i]);
+			dish = this.getDish(menu[i]);
+			menuPrice += this.getDishPrice(dish);
 		}
 		return menuPrice;
 	}
