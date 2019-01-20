@@ -2,10 +2,16 @@ var dinnerOverviewView = function (container, model) {
 
     this.container = container;
 
+    var numberOfPersons = container.find("#numberOfPersons");
+    var guests = model.getNumberOfGuests();
+    numberOfPersons.html(guests);
+
+
+    startRow = '<div class="row justify-content-md-center">';
+
     var dishesModel = container.find("#dishesModel");
     var menu = model.getFullMenu();
     var dishes = "";
-
 
     for (var i = 0; i < menu.length; i++) {
         var dish = model.getDish(menu[i]);
@@ -16,7 +22,6 @@ var dinnerOverviewView = function (container, model) {
             '</div>'
     }
 
-    startRow = '<div class="row justify-content-md-center">'
 
 
     rightSide = '<div id="totalCost" class="col-md-auto border-left">' +
@@ -24,7 +29,7 @@ var dinnerOverviewView = function (container, model) {
         '<h3>300 SEK</h3>' +
         '</div>'
 
-    endRow = '</div>'
+    endRow = '</div>';
 
 
     dishesModel.html(startRow + dishes + rightSide + endRow);
