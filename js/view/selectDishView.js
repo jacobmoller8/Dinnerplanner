@@ -5,7 +5,7 @@ var selectDishView = function (container, model) {
     var test = container.find("#TESTER");
     test.html("<h4>TESTSUCCEDED</h4>");
     var menu = model.getFullMenu();
-    dishes = "";
+    var dishes = "";
 
     for (var i = 0; i < menu.length; i++) {
         var dish = model.getDish(menu[i]);
