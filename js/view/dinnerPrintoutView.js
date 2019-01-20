@@ -4,7 +4,7 @@ var dinnerPrintoutView = function (container, model) {
 
     var numberOfPersons = container.find("#numberOfPersons");
     var guests = model.getNumberOfGuests();
-    numberOfPersons.html("guests");
+    numberOfPersons.html(guests);
 
 
     startRow = '<div class="row justify-content-md-center">';
