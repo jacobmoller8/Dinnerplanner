@@ -26,9 +26,7 @@
 #goBackButton {
     font-size: 30px;
 }
-#dinnerSpecifics {
-    padding-top: 20px;
-}
+
 #recipeButtonContainer {
     padding-top: 20px;
     text-align: center;
@@ -42,6 +40,9 @@
     text-align: right;
     color: red;
 }
+#totalTag {
+    margin-top: 176px;
+}
 
 #menuPrice {
     color: red;
@@ -50,5 +51,20 @@
     text-align: center;
     vertical-align: center;
     padding: 30px;
+}
+
+
+
+@media (max-width: 978px) {
+#totalTag {
+    margin-top: 5px;
+}
+#headerTitle {
+    font-size: 50px;
+    font-style: bold;
+}
+#myDinner {
+    font-size: 35px;
+}
 }
 

@@ -16,21 +16,20 @@ var dinnerOverviewView = function (container, model) {
     for (var i = 0; i < menu.length; i++) {
         var dish = model.getDish(menu[i]);
         dishes += '<div class="col-md-2">' +
-            '<img src="images/' + dish.image + '" width="100%" height="150px">' +
+            '<img src="images/' + dish.image + '" width="100%" height="150px" class="mt-4">' +
             '<button class="btn btn-default btn-block bg-light border-dark">' + dish.name + '</button>' +
             '<h4 id="dishPrice">' + model.getDishPrice(dish).toFixed(2) + ' SEK</h4>' +
             '</div>'
     }
-    rightSide = '<div id="totalCost" class="col-md-auto border-left align-middle">' +
-        '<h2 class="align-bottom">Total:</h2>' +
-        '<h3 id="menuPrice" class="align-bottom">' + model.getTotalMenuPrice() + ' SEK</h3>' +
+    rightSide = '<div id="totalCost" class="col-md-auto border-left">' +
+        '<h2 id="totalTag">Total:</h2>' +
+        '<h4 id="menuPrice">' + model.getTotalMenuPrice() + ' SEK</h4>' +
         '</div>'
 
     endRow = '</div>';
 
-    test = ' + model.getTotalMenuPrice().toFixed(2) + ';
+    returnString = startRow + dishes + rightSide + endRow;
 
-
-    dishesModel.html(startRow + dishes + rightSide + endRow);
+    dishesModel.html(returnString);
 
 }
