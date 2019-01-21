@@ -60,7 +60,8 @@ var DinnerModel = function () {
 
 	//Removes dish from menu
 	this.removeDishFromMenu = function (id) {
-		//TODO Lab 1
+		var dish = this.getDish(id);
+		menu.splice(menu.indexOf(dish), 1);
 	}
 
 	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
