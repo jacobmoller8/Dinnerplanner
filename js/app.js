@@ -9,6 +9,8 @@ $(function () {
 	var SelectDishView = new selectDishView($('#select_dish'), model);
 	var DinnerPrintoutView = new dinnerPrintoutView($('#dinner_printout'), model);
 	var DishDetailsView = new dishDetailsView($('#dish_details'), model);
+	var SelectDishAgainView = new selectDishAgainView($('#select_dish_view'), model);
+	
 
 
 

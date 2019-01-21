@@ -59,6 +59,15 @@
     text-align: right;
 }
 
+#menuSum{
+    text-align: right;
+    color: darkred;
+}
+
+#selectedDishCost{
+    color: darkred;
+}
+
 .confirmDinnerButton{
     display: block;
     margin: auto;
@@ -102,6 +111,7 @@
 .btn-secondary{
     color: black;
     background-color: #ffb856;
+    overflow: hidden;
 }
 
 .foodPic{

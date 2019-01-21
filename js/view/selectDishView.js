@@ -18,7 +18,7 @@ var selectDishView = function (container, model) {
 
     for (var i = 0; i < allDishes.length; i++) {
         var dish = allDishes[i];
-        dishesToPrint += '<div class="container-fluid col-12 col-sm-2 imgCont">' +
+        dishesToPrint += '<div class="container-fluid col-12 col-lg-2 col-md-3 col-sm-4 imgCont">' +
             '<img src="images/' + dish.image + '" class="img-fluid foodPic" alt="Responsive image"/>' +
             '<button class="btn btn-secondary dishBtn">' + dish.name + '</button>' + '</div>'
     }
