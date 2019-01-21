@@ -4,19 +4,17 @@ var selectDishView = function (container, model) {
 
     var dishSpan = container.find("#dishesSpan");
 
-    var allDishes = model.getAllDishes("starter");
+    var allStarterDishes = model.getAllDishes("starter");
+    var allMainDishes = model.getAllDishes("main dish");
+    var allDesertDishes = model.getAllDishes("dessert");
+
+    var allDishes = allStarterDishes.concat(allMainDishes).concat(allDesertDishes);
+
     var dishesToPrint = "";
 
-    var row_start = "<div class=" + 'row' + ">";
+    var row_start = "<div class=" + 'row justify-content-start' + ">";
     var row_end = "</div>";
 
-
-    var testerSpan = container.find("#testerDiv");
-    var testText = "";
-
-    for (var i = 0; i < 5; i++) {
-        testText += allDishes[i];
-    }
 
     for (var i = 0; i < allDishes.length; i++) {
         var dish = allDishes[i];
@@ -25,6 +23,5 @@ var selectDishView = function (container, model) {
             '<button class="btn btn-secondary dishBtn">' + dish.name + '</button>' + '</div>'
     }
 
-    testerSpan.html(testText);
     dishSpan.html(row_start + dishesToPrint + row_end);
 }
