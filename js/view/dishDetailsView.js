@@ -16,7 +16,7 @@ var dishDetailsView = function (container, model) {
     var row_end = '</div>';
 
     dishDescriptionData = '<div class="container-fluid col-12 col-sm-6 dishDesc">' +
-        '<div class="container-fluid col-12 col-sm-10 dishDescImageCont"> <h3>' + currentDish.name + '</h3> <img src="' + currentDish.image + '" class="img-fluid dishDescImage" id="dishDescImage" alt=""> </img>'
+        '<div class="container-fluid col-12 col-sm-10 dishDescImageCont"> <h3>' + currentDish.name + '</h3> <img src="images/' + currentDish.image + '" class="img-fluid dishDescImage" id="dishDescImage" alt=""> </img>'
         + '<p id="dishDescText">' + currentDish.description + '</p>'
         + '<button class="btn btn-secondary"> Back to search </button>'
         + '</div> </div>';
@@ -25,15 +25,15 @@ var dishDetailsView = function (container, model) {
 
     for (ingredient in allIngredients) {
         dishIngredientData += '<tr>'
-            + '<td>' + allIngredients[ingredient].name + '</td>'
             + '<td>' + allIngredients[ingredient].quantity + '</td>'
             + '<td>' + allIngredients[ingredient].unit + '</td>'
+            + '<td>' + allIngredients[ingredient].name + '</td>'
             + '<td>' + allIngredients[ingredient].price + '</td>'
+            + '<td> SEK </td>'
             + '</tr>'
     }
 
     dishIngredientDataEnd = '</tbody> </table> <button class="btn btn-secondary"> Add to menu </button> </div>';
-    console.log(row_start + dishDescriptionData + dishIngredientDataStart + dishIngredientData + dishIngredientDataEnd + row_end);
+    
     dishView.html(row_start + dishDescriptionData + dishIngredientDataStart + dishIngredientData + dishIngredientDataEnd + row_end);
 }
-//row_start + dishDescriptionData + dishIngredientDataStart + dishIngredientDataEnd + row_end
