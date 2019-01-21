@@ -15,52 +15,53 @@
 
 <body>
 
-<!-- HEADER -->
-<div id="header" class="container-fluid d-none d-sm-block">
+    <!-- HEADER -->
+    <div id="header" class="container-fluid d-none d-sm-block">
         <h1 id="headerTitle">Dinner Planner</h1>
     </div>
 
     <!-- MOBILE HEADER -->
     <div id="mobileHeader" class="container-fluid d-block d-sm-none">
-            <h1 id="mobileHeaderTitle">Dinner Planner</h1>
-        </div>
+        <h1 id="mobileHeaderTitle">Dinner Planner</h1>
+    </div>
 
     <!-- TOP NAVBAR ON SMALL DEVICES -->
     <nav class="navbar navbar-light bg-light d-block d-sm-none">
         <a class="navbar-brand" href="#"> My Dinner</a>
-        <button class="navbar-toggler mobileNavBtn" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler mobileNavBtn" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <div class="row">
-                    <div class="container-fluid col sideTopSection">
-                        <form action="#">
-                            <div class="form-group row">
-                                    <label class="col-4" for="peopleSelector">People:</label>
-                                    <input class="form-control col-4" id="peopleSelector" type="number" name="people" step="1">
-                            </div>
-                        </form>
+                <div class="container-fluid col sideTopSection">
+                    <form action="#">
+                        <div class="form-group row">
+                            <label class="col-4" for="peopleSelector">People:</label>
+                            <input class="form-control col-4" id="peopleSelector" type="number" name="people" step="1">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="container-fluid col sideColumnHeader">
+                    <div class="row">
+                        <p class="sideDishName col-6">Dish Name</p>
+                        <p class="sideCost col-6">Cost</p>
                     </div>
                 </div>
-        
-                <div class="row">
-                    <div class="container-fluid col sideColumnHeader">
-                        <div class="row">
-                            <p class="sideDishName col-6">Dish Name</p>
-                            <p class="sideCost col-6">Cost</p>
-                        </div>
+            </div>
+
+            <div class="row">
+                <div class="container-fluid col sideBottomSection">
+                    <div class="row">
+                        <p class="sideDishName col-6">Köttbullar</p>
+                        <p class="sideCost col-6">SEK 0.00</p>
                     </div>
+                    <button type="button" class="btn btn-secondary confirmDinnerButton">Confirm Dinner</button>
                 </div>
-        
-                <div class="row">
-                    <div class="container-fluid col sideBottomSection">
-                        <div class="row">
-                            <p class="sideDishName col-6">Köttbullar</p>
-                            <p class="sideCost col-6">SEK 0.00</p>
-                        </div>
-                        <button type="button" class="btn btn-secondary confirmDinnerButton">Confirm Dinner</button>
-                    </div>
-                </div> 
+            </div>
         </div>
     </nav>
 
@@ -71,8 +72,8 @@
                 <h4>My dinner</h4>
                 <form action="#">
                     <div class="form-group row">
-                            <label class="col-4" for="peopleSelector">People:</label>
-                            <input class="form-control col-4" id="peopleSelector" type="number" name="people" step="1">
+                        <label class="col-4" for="peopleSelector">People:</label>
+                        <input class="form-control col-4" id="peopleSelector" type="number" name="people" step="1">
                     </div>
                 </form>
             </div>
@@ -95,64 +96,30 @@
                 </div>
                 <button type="button" class="btn btn-secondary confirmDinnerButton">Confirm Dinner</button>
             </div>
-        </div>        
-    </div>  
+        </div>
+    </div>
 
     <!-- DISH DETAILS -->
     <div id="dishDetails" class="container-fluid col offset-sm-3 offset-lg-2 col-sm-9 col-lg-10">
-        <div class="row">
-        <!-- DISH DESCRIPTION -->
-        <div class="container-fluid col-12 col-sm-6 dishDesc">
-            <div class="container-fluid col-12 col-sm-10 dishDescImageCont">
-                <h3>Lasange</h3>
-                <img src="#" class="img-fluid dishDescImage" id="dishDescImage" alt="">
-                <p id="dishDescText">Lorem ipsum dolor sit amet consectetur adipisicing elit. A, aspernatur facere quod sunt dolorem illo placeat et obcaecati totam rerum dolor maiores magni quaerat debitis excepturi asperiores fuga doloremque error laborum exercitationem! Iste obcaecati laudantium nostrum quam. Fuga magni laudantium corrupti, quibusdam nobis corporis? Odit aliquam exercitationem molestiae amet ex.</p>
-                <button class="btn btn-secondary">Back to search</button>
-            </div>
-            
-        </div>
-        <!-- DISH RECIPE -->
-        <div class="container-fluid col-12 col-sm-6 dishReci">
-            <h3>Ingredients for 3 people</h3>    
-            <table class="table ingredientTable">
-                <tbody>
-                    <tr>
-                        <td>2 tbsp</td>
-                        <td>olive oil</td>
-                        <td>SEK</td>
-                        <td>0.00</td>
-                    </tr>
-                    <tr>
-                        <td>2 tbsp</td>
-                        <td>olive oil</td>
-                        <td>SEK</td>
-                        <td>0.00</td>
-                    </tr>
-                    <tr>
-                        <td>2 tbsp</td>
-                        <td>olive oil</td>
-                        <td>SEK</td>
-                        <td>0.00</td>
-                    </tr>
-                </tbody>
-            </table>
-            <button class="btn btn-secondary">Add to menu</button>
-        </div>
-        
-        </div>
+        <div id="dishDescription"></div>
     </div>
-        
+
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
 
     <!-- The application JavaScript code -->
     <script src="js/app.js"></script>
     <script src="js/model/dinnerModel.js"></script>
-    <script src="js/view/selectDishView.js"></script>
     <!-- TODO: Here you should include JS code for your other views -->
+    <script src="js/view/ExampleView.js"></script>
+    <script src="js/view/dinnerPrintoutView.js"></script>
+    <script src="js/view/selectDishView.js"></script>
+    <script src="js/view/dinnerOverviewView.js"></script>
+    <script src="js/view/dishDetailsView.js"></script>
+
 </body>
 
 </html>
