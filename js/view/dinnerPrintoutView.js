@@ -18,8 +18,8 @@ var dinnerPrintoutView = function (container, model) {
             '</div>' +
             '<div class="col-md-5">' +
             '<div class="row">' +
-            '<div class="col-md-auto">' +
-            '<img src="images/' + dish.image + '" width="250" height="150px">' +
+            '<div class="col-md-4">' +
+            '<img src="images/' + dish.image + '" width="100%" height="150px">' +
             '</div>' +
             '<div class="col-md-auto">' +
             '<h2>' + dish.name + '</h2>' +
