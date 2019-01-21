@@ -7,7 +7,6 @@ var DinnerModel = function () {
 	var numberOfGuests = 3;
 	var menu = [1, 103, 202];
 
-
 	this.setNumberOfGuests = function (num) {
 		if (num < 1) return;
 		numberOfGuests = num;
