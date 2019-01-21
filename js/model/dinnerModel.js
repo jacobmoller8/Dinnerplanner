@@ -6,6 +6,7 @@ var DinnerModel = function () {
 
 	var numberOfGuests = 3;
 	var menu = [1, 103, 202];
+	var selectedDish = 100;
 
 	this.setNumberOfGuests = function (num) {
 		if (num < 1) return;
@@ -18,7 +19,7 @@ var DinnerModel = function () {
 
 	//Returns the dish that is on the menu for selected type 
 	this.getSelectedDish = function (type) {
-		//TODO Lab 1
+		return selectedDish;
 	}
 
 	//Returns all the dishes on the menu.
@@ -27,8 +28,8 @@ var DinnerModel = function () {
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
-	this.getAllIngredients = function () {
-		//TODO Lab 1
+	this.getAllIngredients = function (dish) {
+		return dish.ingredients;
 	}
 
 	// Returns the price for the dish (ingredients price * number of guests).
