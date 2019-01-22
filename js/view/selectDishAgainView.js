@@ -3,7 +3,8 @@ var selectDishAgainView = function (container, model) {
     this.container = container;
 
     var dishSpan = container.find("#dishesSpan");
-    var dishSummary = container.find(".dinnerSummary");
+		var dishSummary = container.find(".dinnerSummary");
+		var topBarSummary = container.find("#topBarSum");
 
     var allStarterDishes = model.getAllDishes("starter");
     var allMainDishes = model.getAllDishes("main dish");
@@ -41,9 +42,12 @@ var selectDishAgainView = function (container, model) {
         price = model.getDishPrice(allSelectedDishes[p]);
         selectedDishesPrint += '<p class="sideDishName col-6" id="selectedDishName">'+ allSelectedDishes[p].name +'</p>' +
                           '<p class="sideCost col-6" id="selectedDishCost">'+ price +'</p>'
-    }
-    var totalSum = '<p class="sideSum offset-6 col-6" id="menuSum"> SEK ' + model.getTotalMenuPrice() + '</p>';
-    console.log(selectedDishesPrint)
+		}
+		
+		var totalSum = '<p class="sideSum offset-6 col-6" id="menuSum"> SEK ' + model.getTotalMenuPrice() + '</p>';
+		var topTotalSum = '<h5 id="topBarSumText"> SEK ' + model.getTotalMenuPrice() + '</h5>';
+
+    topBarSummary.html(row_start + topTotalSum + row_end);
     dishSummary.html(row_start + selectedDishesPrint + totalSum + row_end);
 
 }

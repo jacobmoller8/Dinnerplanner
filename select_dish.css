@@ -75,7 +75,13 @@
 }
 
 .mobileNavBtn{
-    float: right;
+	float: right;
+}
+
+#topBarSumText{
+	padding-top:10px;
+	color: darkred;
+
 }
 
 .dishDescImage{
