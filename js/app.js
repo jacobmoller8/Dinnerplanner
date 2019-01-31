@@ -1,25 +1,75 @@
 $(function () {
-	//We instantiate our model
+
 	var model = new DinnerModel();
 
-	// And create the instance of ExampleView
-	var exampleView = new ExampleView($("#exampleView"));
+	var HomeView = new homeView($('#homeView'), model);
+	var HomeController = new homeController(HomeView, model, this);
 
 	var DinnerOverviewView = new dinnerOverviewView($('#dinner_overview'), model);
-	var SelectDishView = new selectDishView($('#select_dish'), model);
+	var DinnerOverviewController = new dinnerOverviewController(DinnerOverviewView, model, this);
+
+	var DishSearchView = new dishSearchView($('#selectDishView'), model);
+	var DishSearchController = new dishSearchController(DishSearchView, model, this);
+
+	var SideBarView = new sideBarView($('#sideBarView'), model);
+	var SideBarController = new sideBarController(SideBarView, model, this);
+
+	var MobileNavbarView = new mobileNavbarView($('#navBarView'), model);
+	var MobileNavbarController = new mobileNavbarController(MobileNavbarView, model, this);
+
 	var DinnerPrintoutView = new dinnerPrintoutView($('#dinner_printout'), model);
-	var DishDetailsView = new dishDetailsView($('#dish_details'), model);
-	var SelectDishAgainView = new selectDishAgainView($('#select_dish_view'), model);
-	
+	var DinnerPrintoutController = new dinnerPrintoutController(DinnerPrintoutView, model, this);
+
+	var DishDetailsView = new dishDetailsView($('#dishDetailsView'), model);
+	var DishDetailsController = new dishDetailsController(DishDetailsView, model, this);
 
 
+	var hideAllViews = function () {
+		HomeView.hide();
+		DinnerOverviewView.hide();
+		DishSearchView.hide();
+		SideBarView.hide();
+		MobileNavbarView.hide();
+		DinnerPrintoutView.hide();
+		DishDetailsView.hide();
+	}
+
+	this.showHomeScreen = function () {
+		hideAllViews();
+		HomeView.show();
+	}
+
+	this.showSelectDishScreen = function () {
+		hideAllViews();
+		var screenSize = $(window).width();
+		if (screenSize >= 978) {
+			SideBarView.show();
+		} else {
+			MobileNavbarView.show();
+		}
+		DishSearchView.show();
+	}
 
 
-	/**
-	 * IMPORTANT: app.js is the only place where you are allowed to
-	 * use the $('someSelector') to search for elements in the whole HTML.
-	 * In other places you should limit the search only to the children 
-	 * of the specific view you're working with (see exampleView.js).
-	 */
+	this.showDishDetailsScreen = function () {
+		hideAllViews();
+		var screenSize = $(window).width();
+		DishDetailsView.show();
+		if (screenSize >= 978) {
+			SideBarView.show();
+		} else {
+			MobileNavbarView.show();
+		}
+	}
+
+	this.showDinnerOverviewScreen = function () {
+		hideAllViews();
+		DinnerOverviewView.show();
+	}
+
+	this.showDinnerPrintoutScreen = function () {
+		hideAllViews();
+		DinnerPrintoutView.show();
+	}
 
 });

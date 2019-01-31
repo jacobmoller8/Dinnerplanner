@@ -7,10 +7,6 @@
     font-size: 60px;
     font-style: bold;
 }
-#home {
-    text-align: center;
-    margin-top: 60px;
-}
 #newDinnerButton {
     margin-top: 60px;
     font-size: 20px;
@@ -26,12 +22,10 @@
 #goBackButton {
     font-size: 30px;
 }
-
 #recipeButtonContainer {
     padding-top: 20px;
     text-align: center;
 }
-
 #printRecipeButton {
     font-size: 40px;
 }
@@ -43,7 +37,6 @@
 #totalTag {
     margin-top: 176px;
 }
-
 #menuPrice {
     color: red;
 }
@@ -67,4 +60,121 @@
     font-size: 35px;
 }
 }
+
+
+.row{
+	margin: none;
+}
+.form-row{
+	margin: none;
+}
+.sideColumnHeader{
+	background-color: grey;
+}
+.sideCost{
+	text-align: right;
+}
+.confirmDinnerButton{
+display: block;
+margin: auto;
+padding: none;
+}
+.mobileNavBtn{
+    float: right;
+}
+
+.dishDescImage{
+width: 100%;
+}
+.imgCont{
+display: block;
+padding-bottom: 20px;
+float: left;
+}
+.dishBtn{
+width: 100%;
+border-radius: 0;
+padding: 5px;
+}
+.dishDesc{
+padding-bottom: 10px;
+}
+.dishReci{
+background-color: #ffd684;
+}
+.dishDescImageCont{
+margin: 0 auto;
+padding: 0;
+}
+.btn-secondary{
+color: black;
+background-color: #ffb856;
+overflow: hidden;
+}
+.foodPic{
+width: 100%;
+height: 80%;
+}
+.sideBarDishItem:hover{
+    cursor: pointer;
+    background-color: lightgrey;
+}
+#mobileHeader {
+background-color: lightgrey;
+text-align: center;
+padding-bottom: 10px;    
+}
+#mobileHeaderTitle {
+padding-top: 10px;
+font-size: 20px;
+font-style: bold;
+}
+#peopleSelector{
+margin-left:10px;
+}
+#menuSum{
+	text-align: right;
+	color: darkred;
+}
+#selectedDishCost{
+	color: darkred;
+}
+#topBarSumText{
+padding-top:10px;
+padding-left: 25px;
+color: darkred;
+}
+
+#sideBarView{
+	display: none;
+	height: 100%;
+	position: fixed;
+	border: solid;
+	border-width: 2px;
+	position: absolute;
+}
+#homeView {
+	display: block;
+	text-align: center;
+	margin-top: 60px;
+}
+#navBarView{
+	display: none;
+}
+#selectDishView{
+	display: none;
+}
+#dishDetailsView{
+	display: none;
+}
+#dinner_overview{
+	display: none;
+}
+#dinner_printout{
+	display: none;
+}
+
+
+
+
 

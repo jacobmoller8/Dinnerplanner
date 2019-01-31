@@ -1,16 +1,28 @@
 //DinnerModel Object constructor
 var DinnerModel = function () {
 
-	//TODO Lab 1 implement the data structure that will hold number of guest
-	// and selected dishes for the dinner menu
 
-	var numberOfGuests = 3;
+	var observers = [];
+	console.log(observers);
+	var numberOfGuests = 4;
 	var menu = [1, 103, 202];
 	var selectedDish = 100;
+
+	// Adding observer
+	this.addObserver = function (observer) {
+		observers.push(observer);
+	}
+	// Notify observer
+	var notifyObservers = function () {
+		for (var i = 0; i < observers.length; i++) {
+			observers[i].update();
+		}
+	}
 
 	this.setNumberOfGuests = function (num) {
 		if (num < 1) return;
 		numberOfGuests = num;
+		notifyObservers();
 	}
 
 	this.getNumberOfGuests = function () {
@@ -20,6 +32,20 @@ var DinnerModel = function () {
 	//Returns the dish that is on the menu for selected type 
 	this.getSelectedDish = function (type) {
 		return selectedDish;
+	}
+
+	this.setSelectedDishId = function (id) {
+		selectedDish = id;
+		notifyObservers();
+	}
+
+	this.setSelectedDish = function (name) {
+		for (key in dishes) {
+			if (dishes[key].name == name) {
+				selectedDish = dishes[key].id;
+			}
+		}
+		notifyObservers();
 	}
 
 	//Returns all the dishes on the menu.
@@ -54,18 +80,18 @@ var DinnerModel = function () {
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function (id) {
-		var dish = this.getDish(id);
-		menu.push(dish);
+		//var dish = this.getDish(id);
+		menu.push(id);
+		notifyObservers();
 	}
 
 	//Removes dish from menu
 	this.removeDishFromMenu = function (id) {
-		var dish = this.getDish(id);
-		var i;
-		while ((i = menu.indexOf(dish)) > -1) {
-			menu.splice(i, 1);
-		}
+		var index = menu.indexOf(id);
+		menu.splice(index, 1);
+		notifyObservers();
 	}
+
 
 	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
 	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
