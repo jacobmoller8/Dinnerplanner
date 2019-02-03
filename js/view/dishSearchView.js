@@ -19,7 +19,7 @@ var dishSearchView = function (container, model) {
         if (typeValue == "all") {
             model.getAllDishesApi().then(recipes => {
                 getDishesHTML(recipes);
-            }).catch(err=>console.log("following error occured: " + err));
+            }).catch(err => console.log("following error occured: " + err));
 
         } else {
             // OBS HAR INTE UPPDATERAT DENNA DEL ÄN
@@ -44,7 +44,7 @@ var dishSearchView = function (container, model) {
                     <button id="${dish.id}" class="btn btn-secondary dishBtn"> ${dish.title} </button>
                 </div>
                 `
-        }       
+        }
         return dishesToPrint;
     }
 
