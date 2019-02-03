@@ -17,6 +17,13 @@ Todo Lab 3
 
 New JSON Example
 
+https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random
+- Input:
+    * number of dishes
+- Output:
+    * dishes to JSON
+    
+
 https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search
 - input: 
     * type (main course, side dish, dessert, appetizer, salad, breakfast, soup)
