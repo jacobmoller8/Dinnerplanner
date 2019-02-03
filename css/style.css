@@ -86,16 +86,14 @@ padding: none;
 .dishDescImage{
 width: 100%;
 }
-.imgCont{
-display: block;
-padding-bottom: 20px;
-float: left;
-}
+
 .dishBtn{
 width: 100%;
 border-radius: 0;
 padding: 5px;
+overflow: hidden;
 }
+
 .dishDesc{
 padding-bottom: 10px;
 }
@@ -113,11 +111,18 @@ overflow: hidden;
 }
 .foodPic{
 width: 100%;
-height: 50%;
+height: 80%;
 }
+
+.imgCont{
+padding-bottom: 20px;
+height: auto;
+float: left;
+}
+
 .sideBarDishItem:hover{
-    cursor: pointer;
-    background-color: lightgrey;
+cursor: pointer;
+background-color: lightgrey;
 }
 #mobileHeader {
 background-color: lightgrey;
