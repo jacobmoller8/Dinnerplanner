@@ -22,7 +22,7 @@ var dishSearchView = function (container, model) {
                 getDishesHTML(recipes);
             }).catch(err => console.log("following error occured: " + err));
         }
-        if (filterValue == "") {
+        else if (filterValue == "") {
             model.getAllDishesApi(String(typeValue), "").then(recipes => {
                 getDishesHTML(recipes);
             }).catch(err => console.log("following error occured: " + err));
