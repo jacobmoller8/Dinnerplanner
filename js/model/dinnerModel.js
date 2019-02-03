@@ -3,7 +3,6 @@ var DinnerModel = function () {
 
 
 	var observers = [];
-	console.log(observers);
 	var numberOfGuests = 4;
 	var menu = [1, 103, 202];
 	var selectedDish = 100;

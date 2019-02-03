@@ -16,40 +16,31 @@ var dishSearchView = function (container, model) {
         var typeSelector = document.getElementById('typeSelect');
         var typeValue = typeSelector[typeSelector.selectedIndex].value;
 
-        var allStarterDishes = model.getAllDishes("starter");
-        var allMainDishes = model.getAllDishes("main dish");
-        var allDesertDishes = model.getAllDishes("dessert");
-        var allOfTheDishes = [];
-
-
         if (typeValue == "all") {
-            var allDishes = model.getAllDishesApi().then(recipes => {
-                console.log(recipes);
-                allOfTheDishes = recipes;
+            model.getAllDishesApi().then(recipes => {
+                getDishesHTML(recipes);
             }).catch(err=>console.log("following error occured: " + err));
 
         } else {
-            var allDishes = model.getAllDishes(String(typeValue), String(filterValue));
+            // OBS HAR INTE UPPDATERAT DENNA DEL ÄN
+            model.getAllDishes(String(typeValue), String(filterValue));
         }
-        getDishesHTML(allOfTheDishes);
     }
 
-    var getDishesHTML = function (intAllDishes) {
-        console.log("Reached 1");
+    var getDishesHTML = function (dishList) {
         var row_start = "<div class=" + 'row justify-content-start' + ">";
-        var dishesToPrint = getDishHTML(intAllDishes);
+        var dishesToPrint = getDishHTML(dishList);
         var row_end = "</div>";
         dishSpan.html(row_start + dishesToPrint + row_end);
     }
 
-    var getDishHTML = function (_allDishes) {
-        console.log("all dishes: " + _allDishes);
+    var getDishHTML = function (dishList) {
         var dishesToPrint = "";
-        for (var i = 0; i < _allDishes.length; i++) {
-            var dish = _allDishes[i];
+        for (var i = 0; i < dishList.length; i++) {
+            var dish = dishList[i];
             dishesToPrint += `
                 <div class="container-fluid col-12 col-lg-3 col-md-3 col-sm-4 imgCont">
-                    <img src="images/${dish.image}" class="img-fluid foodPic" alt="Responsive image"/>
+                    <img src="${dish.image}" class="img-fluid foodPic" alt="Responsive image"/>
                     <button id="${dish.id}" class="btn btn-secondary dishBtn"> ${dish.title} </button>
                 </div>
                 `
