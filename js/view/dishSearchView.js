@@ -40,7 +40,7 @@ var dishSearchView = function (container, model) {
             var dish = dishList[i];
             dishesToPrint += `
                 <div class="container-fluid col-12 col-lg-3 col-md-3 col-sm-4 imgCont">
-                    <img src="${dish.image}" class="img-fluid foodPic" alt="Responsive image"/>
+                    <img src="https://spoonacular.com/recipeImages/${dish.imageUrls[0]}" class="img-fluid foodPic" alt="Responsive image"/>
                     <button id="${dish.id}" class="btn btn-secondary dishBtn"> ${dish.title} </button>
                 </div>
                 `
