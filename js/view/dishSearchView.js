@@ -12,18 +12,25 @@ var dishSearchView = function (container, model) {
     }
 
     this.searchUpdate = function () {
+
         var filterValue = document.getElementById('filterInput').value;
         var typeSelector = document.getElementById('typeSelect');
         var typeValue = typeSelector[typeSelector.selectedIndex].value;
 
         if (typeValue == "all") {
-            model.getAllDishesApi().then(recipes => {
+            model.getAllDishesApi("", String(filterValue)).then(recipes => {
                 getDishesHTML(recipes);
             }).catch(err => console.log("following error occured: " + err));
-
-        } else {
-            // OBS HAR INTE UPPDATERAT DENNA DEL ÄN
-            model.getAllDishes(String(typeValue), String(filterValue));
+        }
+        if (filterValue == "") {
+            model.getAllDishesApi(String(typeValue), "").then(recipes => {
+                getDishesHTML(recipes);
+            }).catch(err => console.log("following error occured: " + err));
+        }
+        else {
+            model.getAllDishesApi(String(typeValue), String(filterValue)).then(recipes => {
+                getDishesHTML(recipes);
+            }).catch(err => console.log("following error occured: " + err));
         }
     }
 
@@ -40,7 +47,7 @@ var dishSearchView = function (container, model) {
             var dish = dishList[i];
             dishesToPrint += `
                 <div class="container-fluid col-12 col-lg-3 col-md-3 col-sm-4 imgCont">
-                    <img src="https://spoonacular.com/recipeImages/${dish.image}" class="img-fluid foodPic" alt="Responsive image"/>
+                    <img src="https://spoonacular.com/recipeImages/${dish.image}" class="foodPic"/>
                     <button id="${dish.id}" class="btn btn-secondary dishBtn"> ${dish.title} </button>
                 </div>
                 `
