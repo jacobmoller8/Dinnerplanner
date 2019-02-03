@@ -41,7 +41,7 @@ Old JSON Example
 {
 	'id': 103,
 	'name': 'MD 4',                                             CHECK
-	'type': 'main dish',                                        
+	'type': 'main dish',                                        CHECK
 	'image': 'meatballs.jpg',                                   CHECK
 	'description': "Here is how you make it... Lore ipsum...",  CHECK
 	'ingredients': [{                                           CHECK
