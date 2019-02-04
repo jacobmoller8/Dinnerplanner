@@ -141,11 +141,13 @@ var DinnerModel = function () {
 	}
 	// API REQUEST LAB 3
 	this.getDishApi = function (id) {
-		for (key in dishes) {
-			if (dishes[key].id == id) {
-				return dishes[key];
-			}
-		}
+		var ApiKey = '3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767';
+		var ApiUrl = `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/${id}/information`;
+		return fetch(ApiUrl
+			, {
+				headers: { 'X-Mashape-Key': ApiKey }
+			}).then(response => response.json())
+			.then(data => data.results);
 	}
 
 
