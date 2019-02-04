@@ -21,7 +21,6 @@ var dishDetailsView = function (container, model) {
 		model.getDishApi(parseInt(currentDishId)).then(results => {
 
 			window.dishObject = results;
-			console.log(dishObject);
 
 			dishDescriptionData = `
 			<div class="container-fluid col-12 col-sm-6 dishDesc">
@@ -45,7 +44,6 @@ var dishDetailsView = function (container, model) {
 			<td> ${currentIngredient.name} </td>
 			</tr>
 			`
-
 			}
 
 			dishIngredientDataEnd = `<tr>
@@ -60,7 +58,6 @@ var dishDetailsView = function (container, model) {
 			loader.style.display = "none";
 			dishView.html(row_start + dishDescriptionData + dishIngredientDataStart + dishIngredientData + dishIngredientDataEnd + row_end);
 		}).catch(err => { console.log("following error occured: " + err) });
-
 	}
 
 	this.show = function () {

@@ -8,7 +8,6 @@ var dinnerOverviewView = function (container, model) {
 		var guests = model.getNumberOfGuests();
 		numberOfPersons.html(guests);
 
-
 		startRow = '<div class="row justify-content-md-center">';
 
 		var dishesModel = container.find("#dishesModel");
@@ -33,7 +32,6 @@ var dinnerOverviewView = function (container, model) {
 			'</div>'
 
 		endRow = '</div>';
-
 
 		returnString = startRow + dishes + rightSide + endRow;
 

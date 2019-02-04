@@ -13,7 +13,6 @@ var dinnerPrintoutView = function (container, model) {
         var guests = model.getNumberOfGuests();
         numberOfPersons.html(guests);
 
-
         var dishesModel = container.find("#dishesModel");
         var menu = model.getFullMenu();
         var dishes = "";
@@ -40,7 +39,6 @@ var dinnerPrintoutView = function (container, model) {
                 '</div>' +
                 '</div>';
         }
-
         dishesModel.html(dishes);
     }
 

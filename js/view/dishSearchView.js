@@ -37,7 +37,6 @@ var dishSearchView = function (container, model) {
         var dishesToPrint = getDishHTML(dishList);
         var row_end = "</div>";
 
-
         loader.style.display = "none";
         dishSpan.html(row_start + dishesToPrint + row_end);
     }

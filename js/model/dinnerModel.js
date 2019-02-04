@@ -1,11 +1,9 @@
 //DinnerModel Object constructor
 var DinnerModel = function () {
 
-
 	var observers = [];
-	var numberOfGuests = 4;
+	var numberOfGuests = 1;
 	var menu = [];
-	console.log(menu);
 	var selectedDish = "";
 
 	// Adding observer
@@ -18,13 +16,13 @@ var DinnerModel = function () {
 			observers[i].update();
 		}
 	}
-
+	// Set Number of Guests
 	this.setNumberOfGuests = function (num) {
 		if (num < 1) return;
 		numberOfGuests = num;
 		notifyObservers();
 	}
-
+	// Get Number of Guests
 	this.getNumberOfGuests = function () {
 		return numberOfGuests;
 	}
@@ -33,39 +31,22 @@ var DinnerModel = function () {
 	this.getSelectedDish = function (type) {
 		return selectedDish;
 	}
-
+	// Set Selected Dish Id
 	this.setSelectedDishId = function (id) {
 		selectedDish = id;
 		notifyObservers();
 	}
-
-	this.setSelectedDish = function (name) {
-		for (key in dishes) {
-			if (dishes[key].name == name) {
-				selectedDish = dishes[key].id;
-			}
-		}
-		notifyObservers();
-	}
-
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function () {
 		return menu;
 	}
-
-	//Returns all ingredients for all the dishes on the menu.
-	this.getAllIngredients = function (dish) {
-		return dish.ingredients;
-	}
-
-	// Returns the price for the dish (ingredients price * number of guests).
+	// Returns the price for the dish
 	this.getDishPrice = function (dish) {
 		var dishPrice = 0;
 		dishPrice += dish.pricePerServing * numberOfGuests;
-		return dishPrice;
+		return parseInt(dishPrice.toFixed(2));
 	}
-
-	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
+	//Returns the total price of the menu 
 	this.getTotalMenuPrice = function () {
 		menuPrice = 0;
 		for (var i = 0; i < menu.length; i++) {
@@ -73,63 +54,28 @@ var DinnerModel = function () {
 		}
 		return menuPrice;
 	}
-
-	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
-	//it is removed from the menu and the new one added.
+	//Add dish to menu
 	this.addDishToMenu = function (dish) {
-		//var dish = this.getDish(id);
 		menu.push(dish);
 		notifyObservers();
 	}
-
 	//Removes dish from menu
 	this.removeDishFromMenu = function (id) {
-		var index = menu.indexOf(id);
+		for (var i = 0; i < menu.length; i++) {
+			if (id = menu[i].id) {
+				var index = i;
+			}
+		}
 		menu.splice(index, 1);
 		notifyObservers();
 	}
-
-
-	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
-	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
-	//if you don't pass any filter all the dishes will be returned
-	this.getAllDishes = function (type, filter) {
-		return dishes.filter(function (dish) {
-			var found = true;
-			if (filter) {
-				found = false;
-				dish.ingredients.forEach(function (ingredient) {
-					if (ingredient.name.indexOf(filter) != -1) {
-						found = true;
-					}
-				});
-				if (dish.name.indexOf(filter) != -1) {
-					found = true;
-				}
-			}
-			return dish.type == type && found;
-		});
-	}
-
-	//function that returns a dish of specific ID
-	this.getDish = function (id) {
-		for (key in dishes) {
-			if (dishes[key].id == id) {
-				return dishes[key];
-			}
-		}
-	}
-	// API REQUEST LAB 3
+	// Get all dishes from API
 	this.getAllDishesApi = function (type, filter) {
-
 		var ApiKey = '3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767';
-
 		var filterVar = ""
 		var typeVar = ""
-
 		if (filter) { filterVar = filter }
 		if (type) { typeVar = type }
-
 		var ApiUrl = `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?instructionsRequired=false&limitLicense=false&number=20&offset=0&query=${filterVar}&type=${typeVar}`
 		return fetch(ApiUrl
 			, {
@@ -137,7 +83,7 @@ var DinnerModel = function () {
 			}).then(response => response.json())
 			.then(data => data.results);
 	}
-	// API REQUEST LAB 3
+	// Get selected dish from API
 	this.getDishApi = function (id) {
 		var ApiKey = '3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767';
 		var ApiUrl = `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/${id}/information`;
@@ -148,19 +94,7 @@ var DinnerModel = function () {
 	}
 
 
-
-
-
-
-
-	// the dishes variable contains an array of all the 
-	// dishes in the database. each dish has id, name, type,
-	// image (name of the image file), description and
-	// array of ingredients. Each ingredient has name, 
-	// quantity (a number), price (a number) and unit (string 
-	// defining the unit i.e. "g", "slices", "ml". Unit
-	// can sometimes be empty like in the example of eggs where
-	// you just say "5 eggs" and not "5 pieces of eggs" or anything else.
+	//Old Data
 	var dishes = [{
 		'id': 1,
 		'name': 'French toast',
