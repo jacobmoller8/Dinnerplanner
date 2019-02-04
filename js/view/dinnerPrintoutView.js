@@ -42,10 +42,10 @@ var dinnerPrintoutView = function (container, model) {
         }
 
         dishesModel.html(dishes);
-
     }
 
     this.update();
+
     this.show = function () {
         container.show();
     };
