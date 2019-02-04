@@ -45,19 +45,18 @@ var dishDetailsView = function (container, model) {
 			}
 
 			dishIngredientDataEnd = `<tr>
-																<td>Price: </td>
-																<td>${Math.round(results.pricePerServing * model.getNumberOfGuests(), 3)}$ USD</td>
-															</tr>
-															</tbody> 
-															</table> 
-															<button class="btn btn-secondary" id="addToMenuBtn"> Add to menu </button> 
-															</div>`;
+			<td>Price: </td>
+			<td>${Math.round(results.pricePerServing * model.getNumberOfGuests(), 3)}$ USD</td>
+			</tr>
+			</tbody> 
+			</table> 
+			<button class="btn btn-secondary" id="addToMenuBtn"> Add to menu </button> 
+			</div>`;
 
 			dishView.html(row_start + dishDescriptionData + dishIngredientDataStart + dishIngredientData + dishIngredientDataEnd + row_end);
 		}).catch(err => { console.log("following error occured: " + err) });
 
 	}
-	this.update();
 
 	this.show = function () {
 		container.show();
