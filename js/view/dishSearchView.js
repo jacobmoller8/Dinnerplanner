@@ -6,12 +6,7 @@ var dishSearchView = function (container, model) {
     this.searchDishButton = container.find('#searchDishButton');
     var dishSpan = container.find("#dishesSpan");
 
-
     this.update = function () {
-        this.searchUpdate();
-    }
-
-    this.searchUpdate = function () {
 
         var filterValue = document.getElementById('filterInput').value;
         var typeSelector = document.getElementById('typeSelect');
@@ -55,7 +50,7 @@ var dishSearchView = function (container, model) {
         return dishesToPrint;
     }
 
-    this.searchUpdate();
+    this.update();
 
 
     this.show = function () {
