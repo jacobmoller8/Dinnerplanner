@@ -6,7 +6,10 @@ var dishSearchView = function (container, model) {
     this.searchDishButton = container.find('#searchDishButton');
     var dishSpan = container.find("#dishesSpan");
 
+    var loader = document.getElementById('loader');
+
     this.update = function () {
+        loader.style.display = "block";
 
         var filterValue = document.getElementById('filterInput').value;
         var typeSelector = document.getElementById('typeSelect');
@@ -33,6 +36,9 @@ var dishSearchView = function (container, model) {
         var row_start = "<div class=" + 'row' + ">";
         var dishesToPrint = getDishHTML(dishList);
         var row_end = "</div>";
+
+
+        loader.style.display = "none";
         dishSpan.html(row_start + dishesToPrint + row_end);
     }
 
@@ -51,7 +57,6 @@ var dishSearchView = function (container, model) {
     }
 
     this.update();
-
 
     this.show = function () {
         container.show();

@@ -4,6 +4,8 @@ var dishDetailsView = function (container, model) {
 	model.addObserver(this);
 
 	this.update = function () {
+
+		var loader = document.getElementById('loader');
 		var currentDishId = model.getSelectedDish();
 
 		this.container = container;
@@ -40,18 +42,18 @@ var dishDetailsView = function (container, model) {
 			</tr>
 			`
 
-
 			}
 
 			dishIngredientDataEnd = `<tr>
-																<td>Price: </td>
-																<td>${Math.round(results.pricePerServing * model.getNumberOfGuests(), 3)} SEK</td>
-															</tr>
-															</tbody> 
-															</table> 
-															<button class="btn btn-secondary" id="addToMenuBtn"> Add to menu </button> 
-															</div>`;
+			<td>Price: </td>
+			<td>${Math.round(results.pricePerServing * model.getNumberOfGuests(), 3)} SEK</td>
+			</tr>
+			</tbody> 
+			</table> 
+			<button class="btn btn-secondary" id="addToMenuBtn"> Add to menu </button> 
+			</div>`;
 
+			loader.style.display = "none";
 			dishView.html(row_start + dishDescriptionData + dishIngredientDataStart + dishIngredientData + dishIngredientDataEnd + row_end);
 		}).catch(err => { console.log("following error occured: " + err) });
 
