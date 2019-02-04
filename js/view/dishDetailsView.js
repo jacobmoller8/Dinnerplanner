@@ -22,7 +22,7 @@ var dishDetailsView = function (container, model) {
 				<div class="container-fluid col-12 col-sm-10 dishDescImageCont"> 
 					<h3> ${results.title} </h3> 
 					<img src="${results.image}" width="100%" class="img-fluid dishDescImage" id="dishDescImage" alt="Responsive image"> </img>
-					<p id="dishDescText"> ${results.description} </p>
+					<p id="dishDescText"> ${results.instructions} </p>
 					<button class="btn btn-secondary" id="backToSearchBtn"> Back to search </button>
 				</div>
 			</div>
