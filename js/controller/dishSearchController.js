@@ -1,20 +1,14 @@
 var dishSearchController = function (view, model, app) {
 
     view.searchDishButton.click(function () {
-        view.searchUpdate();
-        dishClick();
+        view.update();
+
     });
 
-    this.update = function () {
-        dishClick();
-    }
+    view.container.on('click', '.dishBtn', function () {
+        model.setSelectedDishId(this.id);
+        //app.showDishDetailsScreen();
+    });
 
-    var dishClick = function () {
-        view.container.find(".dishBtn").click(function () {
-            model.setSelectedDishId(this.id);
-            app.showDishDetailsScreen();
-        })
-    }
-    dishClick();
-    model.addObserver(this);
+
 }
