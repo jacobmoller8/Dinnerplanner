@@ -146,8 +146,7 @@ var DinnerModel = function () {
 		return fetch(ApiUrl
 			, {
 				headers: { 'X-Mashape-Key': ApiKey }
-			}).then(response => response.json())
-			.then(data => data.results);
+			}).then(response => response.json());
 	}
 
 
