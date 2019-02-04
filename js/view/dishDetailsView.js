@@ -19,6 +19,10 @@ var dishDetailsView = function (container, model) {
 
 
 		model.getDishApi(parseInt(currentDishId)).then(results => {
+
+			window.dishObject = results;
+			console.log(dishObject);
+
 			dishDescriptionData = `
 			<div class="container-fluid col-12 col-sm-6 dishDesc">
 				<div class="container-fluid col-12 col-sm-10 dishDescImageCont"> 

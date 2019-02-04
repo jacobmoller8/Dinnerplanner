@@ -2,35 +2,24 @@ var mobileNavbarView = function (container, model) {
     this.container = container;
     model.addObserver(this);
 
-    this.update = function () {
-        var newMenu = model.getFullMenu();
-        loadNavBarView(newMenu);
-    }
-
-    var loadNavBarView = function (menu) {
+    this.update = function (menu) {
+        var menu = model.getFullMenu();
         var dishSummary = container.find(".dinnerSummary");
         var topBarSummary = container.find("#topBarSum");
+
         var row_start = '<div class="row">';
         var row_end = '</div>';
 
-        var menu = model.getFullMenu();
-        var allSelectedDishes = [];
+        var selectedDishesPrint = "";
 
         for (dish in menu) {
-            allSelectedDishes.push(model.getDish(menu[dish]))
-        }
 
-        var selectedDishesPrint = "";
-        var price = "";
-
-        for (p in allSelectedDishes) {
-            price = model.getDishPrice(allSelectedDishes[p]);
             selectedDishesPrint +=
                 `
-			<div class="container-fluid col-12 sideBarDishItem">
+			<div class="container-fluid col-12 sideBarDishItem" id="${menu[dish].id}">
 				<div class="row">
-					<p class="sideDishName col-6" id="selectedDishName">  ${allSelectedDishes[p].name} </p>
-					<p class="sideCost col-6" id="selectedDishCost"> ${price} </p>
+					<p class="sideDishName col-6" id="selectedDishName">  ${menu[dish].title} </p>
+					<p class="sideCost col-6" id="selectedDishCost"> ${model.getDishPrice(menu[dish])} </p>
 				</div>
 			</div>
 			`
