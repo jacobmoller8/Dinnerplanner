@@ -32,7 +32,6 @@ var dishDetailsView = function (container, model) {
 
 			for (ingredient in results.extendedIngredients) {
 				var currentIngredient = results.extendedIngredients[ingredient];
-				console.log(ingredient);
 				dishIngredientData += `
 			<tr>
 			<td> ${currentIngredient.amount * model.getNumberOfGuests()}  </td>
@@ -46,7 +45,7 @@ var dishDetailsView = function (container, model) {
 
 			dishIngredientDataEnd = `<tr>
 																<td>Price: </td>
-																<td>${Math.round(results.pricePerServing * model.getNumberOfGuests(), 3)}$ USD</td>
+																<td>${Math.round(results.pricePerServing * model.getNumberOfGuests(), 3)} SEK</td>
 															</tr>
 															</tbody> 
 															</table> 
@@ -57,7 +56,6 @@ var dishDetailsView = function (container, model) {
 		}).catch(err => { console.log("following error occured: " + err) });
 
 	}
-	this.update();
 
 	this.show = function () {
 		container.show();

@@ -11,7 +11,7 @@ var dishSearchController = function (view, model, app) {
 		})
 
     view.container.on('click', '.dishBtn', function () {
-        model.setSelectedDishId(this.id);
+				model.setSelectedDishId(parseInt(this.id));
         app.showDishDetailsScreen();
     });
 

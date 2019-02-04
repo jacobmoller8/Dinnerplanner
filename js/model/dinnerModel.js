@@ -70,7 +70,7 @@ var DinnerModel = function () {
 	this.getTotalMenuPrice = function () {
 		menuPrice = 0;
 		for (var i = 0; i < menu.length; i++) {
-			dish = this.getDish(menu[i]);
+			dish = this.getDishApi(menu[i]);
 			menuPrice += this.getDishPrice(dish);
 		}
 		return menuPrice;
