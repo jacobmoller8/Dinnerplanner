@@ -3,6 +3,8 @@
     background-color: lightgrey;
     text-align: center;
     padding-bottom: 10px;    
+    border-bottom: solid;
+	border-width: 2px;
 }
 #headerTitle {
     font-size: 60px;
@@ -155,7 +157,8 @@ color: darkred;
 
 #sideBarView{
 	display: none;
-	border: solid;
+    border-bottom: solid;
+    border-right: solid;
 	border-width: 2px;
     position: absolute;
     height: 100vh;
