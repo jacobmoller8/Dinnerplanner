@@ -6,7 +6,6 @@ var dishDetailsView = function (container, model) {
 	this.update = function () {
 
 		var loader = document.getElementById('loader');
-
 		var currentDishId = model.getSelectedDish();
 
 		this.container = container;
@@ -68,10 +67,13 @@ var dishDetailsView = function (container, model) {
 		}
 	}
 
+
+
 	this.show = function () {
 		container.show();
 	};
 	this.hide = function () {
+		loader.style.display = "none";
 		container.hide();
 	};
 }

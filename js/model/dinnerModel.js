@@ -12,6 +12,7 @@ var DinnerModel = function () {
 	}
 	// Notify observer
 	var notifyObservers = function () {
+		console.log("NOTIFIED")
 		for (var i = 0; i < observers.length; i++) {
 			observers[i].update();
 		}
@@ -20,6 +21,7 @@ var DinnerModel = function () {
 	this.setNumberOfGuests = function (num) {
 		if (num < 1) return;
 		numberOfGuests = num;
+		document.cookie = `numberOfGuests=${numberOfGuests}`
 		notifyObservers();
 	}
 	// Get Number of Guests
@@ -32,6 +34,7 @@ var DinnerModel = function () {
 	}
 	// Set Selected Dish Id
 	this.setSelectedDishId = function (id) {
+		document.cookie = `selectedDish=${id}`
 		selectedDish = id;
 		notifyObservers();
 	}
@@ -56,6 +59,13 @@ var DinnerModel = function () {
 	//Add dish to menu
 	this.addDishToMenu = function (dish) {
 		menu.push(dish);
+
+		// This part is saving the current menu in cookies
+		cookieMenu = [];
+		for (item in menu){
+			cookieMenu.push(menu[item].id)
+		}
+		document.cookie = `menu=${cookieMenu}`
 		notifyObservers();
 	}
 	//Removes dish from menu
@@ -66,6 +76,14 @@ var DinnerModel = function () {
 			}
 		}
 		menu.splice(index, 1);
+
+		// This part is saving the current menu in cookies
+		cookieMenu = [];
+		for (item in menu){
+			cookieMenu.push(menu[item].id)
+		}
+		document.cookie = `menu=${cookieMenu}`
+
 		notifyObservers();
 	}
 	// Get all dishes from API
@@ -74,7 +92,7 @@ var DinnerModel = function () {
 		var typeVar = ""
 		if (filter) { filterVar = filter }
 		if (type) { typeVar = type }
-		var ApiUrl = `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?instructionsRequired=false&limitLicense=false&number=20&offset=0&query=${filterVar}&type=${typeVar}`
+		var ApiUrl = `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?instructionsRequired=false&limitLicense=false&number=10&offset=0&query=${filterVar}&type=${typeVar}`
 		return fetch(ApiUrl
 			, {
 				headers: { 'X-Mashape-Key': APIkey }
@@ -88,6 +106,15 @@ var DinnerModel = function () {
 			, {
 				headers: { 'X-Mashape-Key': APIkey }
 			}).then(response => response.json())
+	}
+
+	this.loadMenuFromCookies = function (savedMenu){
+		for (item in savedMenu){
+			this.getDishApi(savedMenu[item]).then(results => {
+				menu.push(results)
+			}).catch(err => {console.log("Following error occured while loading the menu: " + err)})
+		}
+		notifyObservers()
 	}
 
 
