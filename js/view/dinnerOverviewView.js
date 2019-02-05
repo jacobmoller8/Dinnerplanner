@@ -19,7 +19,7 @@ var dinnerOverviewView = function (container, model) {
 			var dish = menu[i];
 
 			dishes += `
-                <div class="col-12 col-lg-2 col-md-2 col-sm-3 imgCont">
+                <div class="mt-4 col-12 col-lg-2 col-md-2 col-sm-3 imgCont">
                     <img src="${dish.image}" class="foodPic"/>
 					<button id="${dish.id}" class="btn btn-secondary dishBtn"> ${dish.title} </button>
 					<h4 id="dishPrice">${model.getDishPrice(dish)} SEK</h4>
