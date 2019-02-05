@@ -20,8 +20,7 @@ var dishSearchView = function (container, model) {
                 getDishesHTML(recipes);
             }).catch(err => {
                 loader.style.display = "none";
-                document.body.insertAdjacentHTML( 'afterbegin', handleError(err));
-                console.log("following error occured 1: " + err)
+                handleError(document.body, err)
             });
         }
         else if (filterValue == "") {
@@ -29,8 +28,7 @@ var dishSearchView = function (container, model) {
                 getDishesHTML(recipes);
             }).catch(err => {
                 loader.style.display = "none";
-                document.body.insertAdjacentHTML( 'afterbegin', handleError(err));
-                console.log("following error occured 2: " + err)
+                handleError(document.body, err)
             });
         }
         else {
@@ -38,11 +36,12 @@ var dishSearchView = function (container, model) {
                 getDishesHTML(recipes);
             }).catch(err => {
                 loader.style.display = "none";
-                document.body.insertAdjacentHTML( 'afterbegin', handleError(err));
-                console.log("following error occured 3: " + err)
+                handleError(document.body, err)
             });
         }
     }
+
+    
 
     var getDishesHTML = function (dishList) {
         var row_start = "<div class=" + 'row' + ">";

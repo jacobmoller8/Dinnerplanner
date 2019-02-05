@@ -62,9 +62,8 @@ var dishDetailsView = function (container, model) {
 				loader.style.display = "none";
 				dishView.html(row_start + dishDescriptionData + dishIngredientDataStart + dishIngredientData + dishIngredientDataEnd + row_end);
 			}).catch(err => {
-                loader.style.display = "none";
-                alert("following error occured: " + err)
-                console.log("following error occured: " + err)
+				loader.style.display = "none";
+				console.log("The following error occured: " + err)
             });
 		}
 	}

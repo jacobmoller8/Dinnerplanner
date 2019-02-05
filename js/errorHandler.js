@@ -1,4 +1,9 @@
-var handleError = (err) => {
+var handleError = (placement, err) => {
+    // Remove earlier errorContainers
+    var element = document.getElementById('errorContainer');
+    if (element){element.parentNode.removeChild(element);}
+
+    // If Network Error:
     if(err = 'TypeError: NetworkError when attempting to fetch resource.'){
         errorContainer = `
         <div class="container-fluid col-8" id="errorContainer">
@@ -16,5 +21,6 @@ var handleError = (err) => {
         <h4>${err}</h4>
     </div>
     `}
-    return errorContainer;
+    
+    placement.insertAdjacentHTML( 'beforeend', errorContainer);
 }
