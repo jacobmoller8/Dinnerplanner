@@ -5,32 +5,17 @@ Jacob Möller & Hugo Bergqvist
 CMETE16
 
 
-
 Todo Lab 3
-* 
-* 
-* 
-* 
-* 
-* 
+
+Tydligen jobbar jag bra under måndagsnätter...
+Det jag gjort:
+- Fixat typ all funktionalitet med dishes som object nu
+- Uppdaterat model-funktioner
+- Trixxat lite mer med loadern
+- Massa kodrensing
+
+Det som är kvar:
+- Cachning
+- Designkontroll (framförallt mobil-view)
 
 
-
-   
-https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search
-- input: 
-    * type (main course, side dish, dessert, appetizer, salad, breakfast, soup)
-    * query
-- output:
-    * id
-    * title
-    * image
-
-https://market.mashape.com/spoonacular/recipe-food-nutrition#get-recipe-information
-- input: 
-    * id
-- output: 
-    * extendedIngredients[{name, amount, unitShorts}]
-    * image
-    * instructions
-    * title
