@@ -62,7 +62,7 @@ var DinnerModel = function () {
 
 		// This part is saving the current menu in cookies
 		cookieMenu = [];
-		for (item in menu){
+		for (item in menu) {
 			cookieMenu.push(menu[item].id)
 		}
 		document.cookie = `menu=${cookieMenu}`
@@ -79,7 +79,7 @@ var DinnerModel = function () {
 
 		// This part is saving the current menu in cookies
 		cookieMenu = [];
-		for (item in menu){
+		for (item in menu) {
 			cookieMenu.push(menu[item].id)
 		}
 		document.cookie = `menu=${cookieMenu}`
@@ -92,7 +92,7 @@ var DinnerModel = function () {
 		var typeVar = ""
 		if (filter) { filterVar = filter }
 		if (type) { typeVar = type }
-		var ApiUrl = `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?instructionsRequired=false&limitLicense=false&number=10&offset=0&query=${filterVar}&type=${typeVar}`
+		var ApiUrl = `https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/search?instructionsRequired=false&limitLicense=false&number=8&offset=0&query=${filterVar}&type=${typeVar}`
 		return fetch(ApiUrl
 			, {
 				headers: { 'X-Mashape-Key': APIkey }
@@ -108,11 +108,11 @@ var DinnerModel = function () {
 			}).then(response => response.json())
 	}
 
-	this.loadMenuFromCookies = function (savedMenu){
-		for (item in savedMenu){
+	this.loadMenuFromCookies = function (savedMenu) {
+		for (item in savedMenu) {
 			this.getDishApi(savedMenu[item]).then(results => {
 				menu.push(results)
-			}).catch(err => {console.log("Following error occured while loading the menu: " + err)})
+			}).catch(err => { console.log("Following error occured while loading the menu: " + err) })
 		}
 		notifyObservers()
 	}
