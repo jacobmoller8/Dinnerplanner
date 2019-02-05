@@ -187,6 +187,8 @@ color: darkred;
     height: 200px;    
   }
   #loader {
+    margin-left: calc(50% - 100px);
+    margin-top: 25%;
     display: block;
   }
   .lds-dual-ring:after {
