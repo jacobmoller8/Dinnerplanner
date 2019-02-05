@@ -181,6 +181,14 @@ color: darkred;
 	display: none;
 }
 
+#errorContainer{
+    border-radius: 15px;
+    background-color: lightcoral;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .lds-dual-ring {
     display: inline-block;
     width: 200px;
