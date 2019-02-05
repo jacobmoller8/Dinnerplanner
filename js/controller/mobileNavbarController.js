@@ -1,6 +1,7 @@
 var mobileNavbarController = function (view, model, app) {
 
 	view.container.on('click', '#navBarConfirmBtn', function () {
+		model.setSelectedDishId(-1);
 		app.showDinnerOverviewScreen();
 	});
 

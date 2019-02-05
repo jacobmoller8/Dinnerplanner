@@ -1,10 +1,7 @@
 var sideBarController = function (view, model, app) {
 
 	view.container.on('click', '#sideBarConfirmBtn', function () {
-		app.showDinnerOverviewScreen();
-	});
-
-	view.container.on('click', '#sideBarConfirmBtn', function () {
+		model.setSelectedDishId(-1);
 		app.showDinnerOverviewScreen();
 	});
 
