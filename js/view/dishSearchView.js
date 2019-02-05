@@ -18,17 +18,29 @@ var dishSearchView = function (container, model) {
         if (typeValue == "all") {
             model.getAllDishesApi("", String(filterValue)).then(recipes => {
                 getDishesHTML(recipes);
-            }).catch(err => console.log("following error occured: " + err));
+            }).catch(err => {
+                loader.style.display = "none";
+                document.body.insertAdjacentHTML( 'afterbegin', handleError(err));
+                console.log("following error occured 1: " + err)
+            });
         }
         else if (filterValue == "") {
             model.getAllDishesApi(String(typeValue), "").then(recipes => {
                 getDishesHTML(recipes);
-            }).catch(err => console.log("following error occured: " + err));
+            }).catch(err => {
+                loader.style.display = "none";
+                document.body.insertAdjacentHTML( 'afterbegin', handleError(err));
+                console.log("following error occured 2: " + err)
+            });
         }
         else {
             model.getAllDishesApi(String(typeValue), String(filterValue)).then(recipes => {
                 getDishesHTML(recipes);
-            }).catch(err => console.log("following error occured: " + err));
+            }).catch(err => {
+                loader.style.display = "none";
+                document.body.insertAdjacentHTML( 'afterbegin', handleError(err));
+                console.log("following error occured 3: " + err)
+            });
         }
     }
 
