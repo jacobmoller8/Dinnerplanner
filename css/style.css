@@ -1,3 +1,4 @@
+
 #header {
     background-color: lightgrey;
     text-align: center;
@@ -154,11 +155,10 @@ color: darkred;
 
 #sideBarView{
 	display: none;
-	height: 100%;
-	position: fixed;
 	border: solid;
 	border-width: 2px;
-	position: absolute;
+    position: absolute;
+    height: 100vh;
 }
 #homeView {
 	display: block;
