@@ -73,7 +73,6 @@ var dishDetailsView = function (container, model) {
 		container.show();
 	};
 	this.hide = function () {
-		loader.style.display = "none";
 		container.hide();
 	};
 }
